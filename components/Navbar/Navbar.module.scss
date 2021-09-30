@@ -1,6 +1,46 @@
-.containerNavbar{
-    background-color: orange;
-    h1 {
-        background-color: blue;
+$font-title: 2.3rem;
+$font-subtitle: 2rem;
+$color-title: white;
+$typeLetter-title: 'Times New Roman';
+$gris: rgb(65, 65, 65);
+
+.navBar{
+    background-image: linear-gradient(37deg, rgb(32, 218, 233),rgb(40, 21, 236));
+    box-shadow: 0px 0px 5px black inset;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .title{
+        font-size: $font-title;
+        color: $color-title;
+        text-shadow: 1px 1px 3px black;
+        font-family: $typeLetter-title;
     }
+    div{
+        .divUlNav{
+            justify-content: right;
+            ul{
+                li{
+                    a{
+                        text-align: center;
+                        font-family: $typeLetter-title;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:nth-child(2){
+                    background-color: $gris;
+                    box-shadow: 0px 0px 5px black inset;
+                }
+            }
+            
+        }
+    }
+}
+
+.subTitle{
+    background-color: $gris;
+    font-size: $font-subtitle;
+    color: white;
+    font-family: $typeLetter-title;
+    padding-left: 2rem;
+    box-shadow: 0px 0px 5px black inset;
 }

@@ -1,0 +1,33 @@
+$font-cartel: 2.5rem;
+$typeLetter-cartel: 'Times New Roman';
+$gris: rgb(65, 65, 65);
+
+.containerHome{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    .sectionOne,
+    .sectionTwo{
+        // background-color: rgb(59, 59, 59);
+        background-color: black;
+        width: 15rem;
+        height: 20rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 1rem;
+        a{
+            position: absolute;
+            left: 20%;
+            top: 50;
+            font-family: $typeLetter-cartel;
+            color: white;
+            font-size: $font-cartel;
+            font-weight: bold;
+        }
+        .image{
+            filter: invert(20%);
+        }
+    }
+}
