@@ -1,8 +1,27 @@
 import Style from './Navbar.module.scss';
+import { useSelector } from 'react-redux';
+import { subTitle } from '../../globalState/Actions';
+import { useDispatch } from 'react-redux';
+import { changeSubTitle } from '../../globalState/Actions';
+import { useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+// import { FiArrowLeftCircle } from 'react-icons/fi';
+
 
 export default function Navbar() {
+
+    const global = useSelector((state:subTitle) => state.subTitle);
+    let dispatch = useDispatch();
+
+    useEffect( () => {
+      dispatch(changeSubTitle('Popular Series And Movies'));
+    }, [])
+    
+    const route = useRouter().pathname;
+
     return(   
-      <div>
+      <div className={`${Style.containerNavbar} position-fixed w-100`}>
         <nav className={`${Style.navBar} navbar navbar-expand-lg navbar-dark`}>
           <div className="container-fluid">
               <span className={`${Style.title} order-lg-1`}>
@@ -22,11 +41,13 @@ export default function Navbar() {
                       <a className="nav-link active" href="">Start your free trial</a>
                     </li>
                 </ul>
-              </div>                
+              </div>
           </div>
         </nav>
         <section className={`${Style.subTitle} navbar navbar-expand-lg`}>
-          <span>Popular Titles</span>
+          <span>{global}</span>
+          <Link href='/'><a className={`${(route === '/series' || route === '/movies') ? 'd-block':'d-none'}`}>Back</a></Link>
+          
         </section>
       </div>
     )

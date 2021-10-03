@@ -1,8 +1,10 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import {FC} from 'react';
+import {wrapper} from '../globalState/Store';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const WrappedApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -13,5 +15,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </>
     );
-  }
-  export default MyApp
+}
+
+export default wrapper.withRedux(WrappedApp);

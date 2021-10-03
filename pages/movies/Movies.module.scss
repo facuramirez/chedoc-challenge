@@ -1,0 +1,30 @@
+.containerMovies{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    padding-top: 12rem;
+    min-height: 50vh;
+    justify-content: center;
+    background-image: radial-gradient(circle at center center, rgba(33,33,33,0),rgba(33,33,33, 0.72)),repeating-linear-gradient(135deg, rgba(33,33,33, 0.72) 0px, rgba(33,33,33, 0.72) 1px,transparent 1px, transparent 4px),repeating-linear-gradient(45deg, rgba(56,56,56, 0.14) 0px, rgba(56,56,56, 0.14) 5px,transparent 5px, transparent 6px),linear-gradient(90deg, rgba(33,33,33, 0.72),rgba(33,33,33, 0.72));
+    .movie{
+        display: flex;
+        flex-flow: column wrap;
+        width: 10rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        .image{
+            width: 10rem;
+            transition: all 500ms;
+        }
+        .image:hover{
+            opacity: 0.5;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+        .title{
+            color: white;
+            margin-top: 0.5rem;
+        }
+    }
+}
