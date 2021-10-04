@@ -20,11 +20,55 @@
         .image:hover{
             opacity: 0.5;
             border: 1px solid white;
-            cursor: pointer;
         }
         .title{
             color: white;
             margin-top: 0.5rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-bottom: 2.1rem;
         }
     }
+}
+
+
+
+.modal{
+    position: relative;
+    top: 25%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    .modalBody{
+        .modalLabel{
+            margin: 0px;
+            font-weight: bold;
+        }
+        .modalLabel:nth-child(n+2){
+            margin-top: 0.6rem;
+        }
+        span,
+        a{
+            margin-left: 0.4rem;
+        }
+        span:nth-child(5){
+            text-align: justify;
+        }
+    }
+}
+
+.cerrar{
+    background-color: darkred;
+    text-decoration: none;
+    color: white;
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.cerrar:hover{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }

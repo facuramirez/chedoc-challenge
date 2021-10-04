@@ -8,7 +8,8 @@ import type { AppProps } from 'next/app'
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 import { useDispatch } from 'react-redux';
 import { changeSubTitle } from '../../globalState/Actions';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label } from 'reactstrap';
 
 
 interface series {
@@ -33,17 +34,70 @@ export default function Series({seriesFilter}:any) {
     dispatch(changeSubTitle('Series'));
   }, [])
 
+  const popup = (e:any) => {
+    e.preventDefault();
+  }
+
+  const [state, setState] = useState({
+    abierto: false,
+    title: '',
+    description: '',
+    releaseYear: 0,
+    url: ''
+  });
+
+  const openModal = (e:any) => {
+    let title = e.target.value;
+    let data = series.find( (serie:any) => serie.title === title);
+
+    setState({
+      ...state,
+      abierto: true,
+      title: data.title,
+      description: data.description,
+      releaseYear : data.releaseYear,
+      url: data.images['Poster Art'].url
+    });
+  }
+  
+  const closeModal = (e:any) => {
+    e.preventDefault();
+    setState({...state, abierto: false})
+  }
+
   return (
-    <Layout>
+    <Layout>      
       <div className={`${Style.containerSeries}`}>        
         {series.map((serie:any, index:number) => (
-          <section className={`${Style.serie}`} key={index}>
-            <img className={`${Style.image}`} src={serie.images['Poster Art'].url} />
-            <h5 className={`${Style.title} mb-5 text-center`}>{serie.title}</h5>
-          </section>
+          
+            <section className={`${Style.serie}`} key={index} onClick={(e)=>popup(e)}>
+              <img className={`${Style.image}`}  src={serie.images['Poster Art'].url} />
+              {/* <h5 className={`${Style.title} mb-5 text-center`}>{serie.title}</h5> */}
+              <Button color='black' value={serie.title} className={`${Style.title} mb-5 text-center`} onClick={(e)=>openModal(e)}>
+                {serie.title}
+              </Button>
+            </section>          
         ))
-        }        
-      </div>
+        }
+        
+        <Modal isOpen={state.abierto} className={`${Style.modal}`}>
+          {/* <ModalHeader>
+            
+          </ModalHeader> */}
+        
+          <ModalBody className={Style.modalBody}>
+           <Label className={Style.modalLabel}>Title:</Label><span>{state.title}</span><br/>
+           <Label className={Style.modalLabel}>Description:</Label><span>{state.description}</span><br/>
+           <Label className={Style.modalLabel}>ReleaseYear:</Label><span>{state.releaseYear}</span><br/>
+           <Label className={Style.modalLabel}>URL:</Label><a href={state.url} target='_blank'>{state.url}</a>
+
+          </ModalBody>
+        
+          <ModalFooter>
+           <a className={Style.cerrar} onClick={(e)=>closeModal(e)}>Cerrar</a>
+          </ModalFooter>
+        </Modal>      
+      </div>       
     </Layout>
   )
 }
@@ -63,3 +117,24 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 }
+
+
+// <Button color='black' className={Style.buttonModal} onClick={()=>openModal()}>
+
+// </Button>
+
+
+
+// <Modal isOpen={state.abierto} className={`${Style.modal}`}>
+//         <ModalHeader>
+//           {series.filter((e)=> {e})}
+//         </ModalHeader>
+        
+//         <ModalBody>
+//           <Label>Soy el Body del Popup</Label>
+//         </ModalBody>
+        
+//         <ModalFooter>
+//           <a className={Style.cerrar} onClick={()=>openModal()}>Cerrar</a>
+//         </ModalFooter>
+//       </Modal>      

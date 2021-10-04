@@ -1,5 +1,5 @@
 import Style from './Home.module.scss';
-import Link from 'next/Link';
+import Link from 'next/link';
 import Image from 'next/image';
 import series from '../../assets/store/cine.png';
 

@@ -7,8 +7,9 @@ $gris: rgb(65, 65, 65);
     flex-flow: row wrap;
     justify-content: space-evenly;
     padding-top: 10rem;
-    margin-bottom: 6rem;
+    padding-bottom: 6rem;
     min-height: 50vh;
+    background-image: url('../../assets/pattern.png');
     .sectionOne,
     .sectionTwo{
         background-color: black;
