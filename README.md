@@ -1,5 +1,5 @@
 ## Chedoc Challenge 
-### Este proyecto es el resultado de una prueba técnica realizada como parte de una entrevista para la empresa "CHEDOC" (https://www.chedoc.com/centros), la cual consiste en una SPA que muestra información sobre diferentes series y películas. 
+### Este proyecto es el resultado de una prueba técnica realizada como parte de una entrevista para la empresa "CHEDOC" (https://www.chedoc.com/), la cual consiste en una SPA que muestra información sobre diferentes series y películas. 
  
 ## Instrucciones para su ejecución: 
 ### Puede optar por dos (2) caminos:
