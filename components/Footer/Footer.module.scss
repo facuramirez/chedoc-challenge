@@ -1,12 +1,7 @@
-$font-title: 2.3rem;
-$font-subtitle: 2rem;
-$color-title: white;
-$typeLetter-title: 'Times New Roman';
-$gris: rgb(65, 65, 65);
-$grisFooter: rgb(41, 41, 41);
+@use '../../pages/_styles' as style;
 
 .footer{
-    background-color: $grisFooter;
+    background-color: style.$grisFooter-footer;
     box-shadow: 0px 0px 5px black inset;
 }
 

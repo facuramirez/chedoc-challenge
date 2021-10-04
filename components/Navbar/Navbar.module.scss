@@ -1,20 +1,16 @@
-$font-title: 2rem;
-$font-subtitle: 1.7rem;
-$color-title: white;
-$typeLetter-title: 'Times New Roman';
-$gris: rgb(65, 65, 65);
+@use '../../pages/_styles' as style;
 
 .containerNavbar{
     z-index: 9999;
     .navBar{
-        background-image: linear-gradient(37deg, rgb(32, 218, 233),rgb(40, 21, 236));
+        background-image: style.$fondo-navbar;
         padding-top: 1rem;
         padding-bottom: 1rem;
         .title{
-            font-size: $font-title;
-            color: $color-title;
+            font-size: style.$font-title-navbar;
+            color: style.$color-title-navbar;
             text-shadow: 1px 1px 3px black;
-            font-family: $typeLetter-title;
+            font-family: style.$typeLetter-title-navbar;
         }
         div{
             .divUlNav{
@@ -23,12 +19,12 @@ $gris: rgb(65, 65, 65);
                     li{
                         a{
                             text-align: center;
-                            font-family: $typeLetter-title;
+                            font-family: style.$typeLetter-title-navbar;
                             font-size: 1.2rem;
                         }
                     }
                     li:nth-child(2){
-                        background-color: $gris;
+                        background-color: style.$gris;
                         box-shadow: 0px 0px 5px black inset;
                     }
                 }
@@ -36,19 +32,19 @@ $gris: rgb(65, 65, 65);
             }
         }
     }
-}
-.subTitle{
-    display: flex;
-    justify-content: space-between !important;
-    background-color: $gris;
-    font-size: $font-subtitle;
-    color: white;
-    font-family: $typeLetter-title;
-    padding-left: 2rem;
-    margin: 0px auto !important;
-    box-shadow: 0px 0px 5px black inset;
-   a{
-    color: white;
-    text-decoration: none;
-   }
+    .subTitle{
+        display: flex;
+        justify-content: space-between !important;
+        background-color: style.$gris;
+        font-size: style.$font-subtitle-navbar;
+        color: white;
+        font-family: style.$typeLetter-title-navbar;
+        padding-left: 2rem;
+        margin: 0px auto !important;
+        box-shadow: 0px 0px 5px black inset;
+       a{
+        color: white;
+        text-decoration: none;
+       }
+    }
 }

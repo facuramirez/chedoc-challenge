@@ -1,0 +1,42 @@
+// NAVBAR
+$fondo-navbar: linear-gradient(37deg, rgb(32, 218, 233),rgb(40, 21, 236));
+$font-title-navbar: 2rem;
+$font-subtitle-navbar: 1.7rem;
+$color-title-navbar: white;
+$typeLetter-title-navbar: 'Times New Roman';
+$gris: rgb(65, 65, 65);
+
+// HOME
+$font-cartel: 2.5rem;
+$typeLetter-cartel: 'Times New Roman';
+$fondo-home: url('../../assets/pattern.png');
+
+
+// SERIES AND MOVIES
+$fondo-secciones: radial-gradient(circle at center center, rgba(33,33,33,0),rgba(33,33,33, 0.72)),repeating-linear-gradient(135deg, rgba(33,33,33, 0.72) 0px, rgba(33,33,33, 0.72) 1px,transparent 1px, transparent 4px),repeating-linear-gradient(45deg, rgba(56,56,56, 0.14) 0px, rgba(56,56,56, 0.14) 5px,transparent 5px, transparent 6px),linear-gradient(90deg, rgba(33,33,33, 0.72),rgba(33,33,33, 0.72));
+
+@mixin cerrarPopup(){
+    background-color: darkred;
+    text-decoration: none;
+    color: white;
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+@mixin cerrarPopupHover(){
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+// FOOTER
+$font-title-footer: 2.3rem;
+$font-subtitle-footer: 2rem;
+$color-title-footer: white;
+$typeLetter-title-footer: 'Times New Roman';
+$gris-footer: rgb(65, 65, 65);
+$grisFooter-footer: rgb(41, 41, 41);

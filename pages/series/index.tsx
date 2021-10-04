@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { changeSubTitle } from '../../globalState/Actions';
 import { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label } from 'reactstrap';
-import Footer from '../../components/Footer/Footer'
+import { motion } from 'framer-motion';
 
 
 interface series {
@@ -25,6 +25,20 @@ interface series {
     }
   },
   releaseYear: number
+}
+
+const sectionVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw'
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1.5
+    }
+  }
 }
 
 export default function Series({seriesFilter}:any) {
@@ -71,12 +85,15 @@ export default function Series({seriesFilter}:any) {
       <div className={`${Style.containerSeries}`} id='container'>        
         {
         series.map((serie:any, index:number) => (          
-            <section className={`${Style.serie}`} key={index} onClick={(e)=>popup(e)}>
+            <motion.section className={`${Style.serie}`} key={index} onClick={(e)=>popup(e)}
+              variants={sectionVariants}
+              initial='hidden'
+              animate='visible'>
               <img className={`${Style.image}`}  src={serie.images['Poster Art'].url} />
               <Button color='black' value={serie.title} className={`${Style.title} mb-5 text-center`} id='button' onClick={(e)=>openModal(e)}>
                 {serie.title}
               </Button>              
-            </section>          
+            </motion.section>          
         ))
         }
         

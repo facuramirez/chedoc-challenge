@@ -1,6 +1,4 @@
-$font-cartel: 2.5rem;
-$typeLetter-cartel: 'Times New Roman';
-$gris: rgb(65, 65, 65);
+@use '../../pages/_styles' as style;
 
 .containerHome{
     display: flex;
@@ -9,7 +7,7 @@ $gris: rgb(65, 65, 65);
     padding-top: 10rem;
     padding-bottom: 6rem;
     min-height: 50vh;
-    background-image: url('../../assets/pattern.png');
+    background-image: style.$fondo-home;
     .sectionOne,
     .sectionTwo{
         background-color: black;
@@ -23,9 +21,9 @@ $gris: rgb(65, 65, 65);
             position: absolute;
             left: 20%;
             top: 50;
-            font-family: $typeLetter-cartel;
+            font-family: style.$typeLetter-cartel;
             color: white;
-            font-size: $font-cartel;
+            font-size: style.$font-cartel;
             font-weight: bold;
         }
         .image{

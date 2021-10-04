@@ -1,3 +1,5 @@
+@use '../_styles' as style;
+
 .containerSeries{
     display: flex;
     flex-flow: row wrap;
@@ -6,7 +8,7 @@
     padding-top: 12rem;
     min-height: 50vh;
     justify-content: center;
-    background-image: radial-gradient(circle at center center, rgba(33,33,33,0),rgba(33,33,33, 0.72)),repeating-linear-gradient(135deg, rgba(33,33,33, 0.72) 0px, rgba(33,33,33, 0.72) 1px,transparent 1px, transparent 4px),repeating-linear-gradient(45deg, rgba(56,56,56, 0.14) 0px, rgba(56,56,56, 0.14) 5px,transparent 5px, transparent 6px),linear-gradient(90deg, rgba(33,33,33, 0.72),rgba(33,33,33, 0.72));
+    background-image: style.$fondo-secciones;
     .serie{
         display: flex;
         flex-flow: column wrap;
@@ -53,20 +55,11 @@
         }
     }
     .cerrar{
-        background-color: darkred;
-        text-decoration: none;
-        color: white;
-        padding: 0.3rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        border-radius: 10px;
-        font-size: 1.2rem;
+        @include style.cerrarPopup();
     }
     
     .cerrar:hover{
-        text-decoration: none;
-        color: white;
-        cursor: pointer;
+        @include style.cerrarPopupHover();
     }
 }
 

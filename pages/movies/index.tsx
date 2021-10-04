@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { changeSubTitle } from '../../globalState/Actions';
 import { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label } from 'reactstrap';
+import { motion } from 'framer-motion';
 
 
 interface movies {
@@ -25,6 +26,21 @@ interface movies {
   },
   releaseYear: number
 }
+
+const sectionVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw'
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1.5
+    }
+  }
+}
+
 
 export default function Movies({moviesFilter}:any) {
   const movies = moviesFilter;
@@ -71,12 +87,15 @@ export default function Movies({moviesFilter}:any) {
       <div className={`${Style.containerMovies}`} id='container'>        
         {
         movies.map((movie:any, index:number) => (          
-            <section className={`${Style.movie}`} key={index} onClick={(e)=>popup(e)}>
+            <motion.section className={`${Style.movie}`} key={index} onClick={(e)=>popup(e)}
+              variants={sectionVariants}
+              initial='hidden'
+              animate='visible'>
               <img className={`${Style.image}`}  src={movie.images['Poster Art'].url} />
               <Button color='black' value={movie.title} className={`${Style.title} mb-5 text-center`} id='button' onClick={(e)=>openModal(e)}>
                 {movie.title}
               </Button>              
-            </section>          
+            </motion.section>          
         ))
         }
         
