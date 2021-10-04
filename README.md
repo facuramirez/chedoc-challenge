@@ -4,8 +4,8 @@
 ## Instrucciones para su ejecución: 
 ### Puede optar por dos (2) caminos:
 1. Clonar este repositorio en su computadora: 
-a) Una vez clonado, situarse en el directorio del repositorio y colocar **npm install** (deberá tener Nodejs instalado)
-b) Desde ese mismo directorio correr el comando **npm run dev** 
+* Una vez clonado, situarse en el directorio del repositorio y colocar **npm install** (deberá tener Nodejs instalado)
+* Desde ese mismo directorio correr el comando **npm run dev** 
 2. Ingresar en su navegador la siguiente ruta https://chedoc-challenge-gdmr7pbm9-facu-ramirez.vercel.app/ 
  
 ## Información técnica: 
