@@ -1,5 +1,5 @@
 import Style from './Footer.module.scss';
-import Link from 'next/Link';
+import Link from 'next/link';
 import Image from 'next/image';
 import { fb, twit, ig, apple, google, microsoft } from './imagesSVG.js';
 
